@@ -1,42 +1,48 @@
 package com.ferragnez.party;
+
+import java.util.Scanner;
+
 public class CheckGuest {
     public static void main(String[] args) throws Exception {
-      //crare l'array con tutti gli invitati 
-      //far inserire il nome dell'utente       
-      //fare un ciclo for per far scorrere tutti gli invitati 
-      //inserire nel ciclo for un if per capire se uno degli elementi dell'array è uguale a quello inseirito 
-      
+  
       String[] invitati = {"Luca Scorrano", "Luca Villa", "Emanuele Spina", "Cristian Limonta", "Matteo Redaelli"};
 
-      String nomeInvitato = "ciccio";
+      Scanner scanner = new Scanner(System.in);      
 
       boolean puoEntrare = false;
 
-      System.out.println("Inserisci il tuo nome e cognome:");        
+      System.out.println("Inserisci il tuo nome e cognome:");   
+      
+      String nomeInvitato = scanner.nextLine();      
 
-      for (int i = 0; i < invitati.length; i++){
+      // for (int i = 0; i < invitati.length; i++){
         
-        if (invitati[i] == nomeInvitato){
-           puoEntrare = true;
-        }
+      //   if (invitati[i].equals(nomeInvitato)){
+      //      puoEntrare = true;
+      //      break;
+      //   }
 
-      }
+      // }
 
-      int i = 0;
-      while (i < invitati.length) {
+       int i = 0;
+       while (!puoEntrare && i < invitati.length) {
         
-        if (invitati[i] == nomeInvitato){
-            puoEntrare = true;
-         }
+         if (invitati[i] == nomeInvitato){
+             puoEntrare = true;
+          }
 
-       }      
+          i++;
+
+        }      
           
          
       if (puoEntrare == true){
-        System.out.println("Puoi entrare alla festa");
+        System.out.println("Puoi entrare alla festa " + nomeInvitato);
       } else{
         System.out.println("Non puoi entrare alla festa");
-      }      
-      
+      }        
+            
+      scanner.close();
+
     }
 }
