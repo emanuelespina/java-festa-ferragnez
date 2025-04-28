@@ -17,7 +17,7 @@ public class CheckGuest {
 
       // for (int i = 0; i < invitati.length; i++){
         
-      //   if (invitati[i].equals(nomeInvitato)){
+      //   if (invitati[i].equalsIgnoreCase(nomeInvitato.trim())luca){
       //      puoEntrare = true;
       //      break;
       //   }
@@ -27,7 +27,7 @@ public class CheckGuest {
        int i = 0;
        while (!puoEntrare && i < invitati.length) {
         
-         if (invitati[i] == nomeInvitato){
+         if (invitati[i].equalsIgnoreCase(nomeInvitato.trim())){
              puoEntrare = true;
           }
 
